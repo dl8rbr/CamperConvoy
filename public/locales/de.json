@@ -1,0 +1,169 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "map": "Karte",
+    "spots": "Stellplätze",
+    "convoys": "Konvois",
+    "favorites": "Favoriten",
+    "login": "Anmelden",
+    "logout": "Abmelden",
+    "register": "Registrieren"
+  },
+  "home": {
+    "title": "Entdecke die besten Stellplätze",
+    "subtitle": "Finde perfekte Orte für dein Wohnmobil, Campervan oder Zelt – von der Community für die Community.",
+    "welcome": "Willkommen zurück, {{name}}!",
+    "findSpots": "Stellplätze finden",
+    "learnMore": "Mehr erfahren",
+    "mapTitle": "Stellplätze in deiner Nähe"
+  },
+  "features": {
+    "spots": {
+      "title": "Tausende Stellplätze",
+      "description": "Entdecke über 10.000 verifizierte Stellplätze in ganz Europa."
+    },
+    "map": {
+      "title": "Interaktive Karte",
+      "description": "Finde Stellplätze in deiner Nähe mit unserer detaillierten Karte."
+    },
+    "community": {
+      "title": "Aktive Community",
+      "description": "Lies Bewertungen und teile deine eigenen Erfahrungen."
+    }
+  },
+  "map": {
+    "loading": "Karte wird geladen...",
+    "details": "Details anzeigen",
+    "yourLocation": "Dein Standort"
+  },
+  "auth": {
+    "loginTitle": "Anmelden",
+    "registerTitle": "Registrieren",
+    "email": "E-Mail-Adresse",
+    "password": "Passwort",
+    "confirmPassword": "Passwort bestätigen",
+    "name": "Name",
+    "loginButton": "Anmelden",
+    "registerButton": "Registrieren",
+    "noAccount": "Noch kein Konto?",
+    "hasAccount": "Bereits ein Konto?",
+    "loginError": "E-Mail oder Passwort ist falsch.",
+    "registerError": "Registrierung fehlgeschlagen."
+  },
+  "common": {
+    "loading": "Laden...",
+    "error": "Ein Fehler ist aufgetreten",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "search": "Suchen",
+    "filter": "Filtern",
+    "sort": "Sortieren"
+  },
+  "spot": {
+    "rating": "Bewertung",
+    "reviews": "Bewertungen",
+    "amenities": "Ausstattung",
+    "price": "Preis",
+    "free": "Kostenlos",
+    "addToFavorites": "Zu Favoriten hinzufügen",
+    "removeFromFavorites": "Aus Favoriten entfernen",
+    "report": "Melden",
+    "share": "Teilen"
+  },
+  "convoy": {
+    "title": "Konvois",
+    "subtitle": "Gemeinsam reisen, Abenteuer teilen – finde oder plane deine nächste Gruppenfahrt.",
+    "create": "Konvoi erstellen",
+    "loginToCreate": "Anmelden um Konvoi zu erstellen",
+    "noResults": "Keine Konvois gefunden",
+    "noSearchResults": "Keine Konvois entsprechen deiner Suche.",
+    "noConvoys": "Es gibt noch keine geplanten Konvois.",
+    "createFirst": "Erstelle den ersten Konvoi!",
+    "participants": "Teilnehmer",
+    "spotsLeft": "Plätze frei",
+    "filter": {
+      "all": "Alle",
+      "planned": "Geplant",
+      "active": "Aktiv"
+    },
+    "status": {
+      "planned": "Geplant",
+      "active": "Aktiv",
+      "completed": "Abgeschlossen",
+      "cancelled": "Abgesagt"
+    },
+    "notFound": "Konvoi nicht gefunden",
+    "notFoundDescription": "Der gesuchte Konvoi existiert nicht oder wurde gelöscht.",
+    "backToList": "Zurück zur Übersicht",
+    "organizedBy": "Organisiert von",
+    "join": "Beitreten",
+    "leave": "Verlassen",
+    "full": "Ausgebucht",
+    "youAreOrganizer": "Du bist Organisator",
+    "route": "Route",
+    "routeDetails": "Routendetails",
+    "start": "Startpunkt",
+    "destination": "Ziel",
+    "description": "Beschreibung",
+    "noDescription": "Keine Beschreibung vorhanden.",
+    "participantsList": "Teilnehmer",
+    "you": "Du",
+    "organizer": "Organisator",
+    "joinedOn": "Beigetreten am",
+    "dates": "Termine",
+    "startDate": "Startdatum",
+    "endDate": "Enddatum",
+    "stats": "Übersicht",
+    "waypoints": "Zwischenstopps",
+    "share": "Teilen",
+    "copyLink": "Link kopieren",
+    "linkCopied": "Link wurde kopiert!",
+    "groupChat": "Gruppenchat",
+    "form": {
+      "title": "Neuen Konvoi erstellen",
+      "subtitle": "Plane eine gemeinsame Reise und lade andere Camper ein.",
+      "convoyTitle": "Titel",
+      "titlePlaceholder": "z.B. Alpenüberquerung 2024",
+      "description": "Beschreibung",
+      "descriptionPlaceholder": "Beschreibe eure geplante Reise...",
+      "characters": "Zeichen",
+      "startDate": "Startdatum",
+      "endDate": "Enddatum (optional)",
+      "startLocation": "Startort",
+      "startLocationPlaceholder": "z.B. München",
+      "destination": "Zielort",
+      "destinationPlaceholder": "z.B. Verona",
+      "maxParticipants": "Maximale Teilnehmer",
+      "maxParticipantsPlaceholder": "Leer lassen für unbegrenzt",
+      "tags": "Tags",
+      "tagsPlaceholder": "z.B. Alpen, Sommer, Familie",
+      "tagsHint": "Kommagetrennte Schlagwörter",
+      "submit": "Konvoi erstellen",
+      "errors": {
+        "titleRequired": "Bitte gib einen Titel ein.",
+        "startDateRequired": "Bitte wähle ein Startdatum.",
+        "startLocationRequired": "Bitte gib einen Startort ein.",
+        "destinationRequired": "Bitte gib ein Ziel ein.",
+        "createFailed": "Konvoi konnte nicht erstellt werden."
+      }
+    }
+  },
+  "chat": {
+    "title": "Gruppenchat",
+    "messages": "Nachrichten",
+    "empty": "Noch keine Nachrichten",
+    "startConversation": "Starte die Unterhaltung!",
+    "placeholder": "Nachricht eingeben...",
+    "loginRequired": "Melde dich an, um zu chatten",
+    "send": "Senden"
+  },
+  "language": {
+    "german": "Deutsch",
+    "english": "English",
+    "switchTo": "Sprache wechseln zu"
+  }
+}
+
+

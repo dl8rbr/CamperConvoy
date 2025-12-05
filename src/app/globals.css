@@ -1,0 +1,417 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Leaflet CSS Import */
+@import 'leaflet/dist/leaflet.css';
+
+/* ============================================
+   CSS Variables & Theme
+   ============================================ */
+:root {
+  --foreground-rgb: 15, 23, 42;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 241, 245, 249;
+  --accent-color: #14b8a6;
+  --accent-hover: #0d9488;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 15, 23, 42;
+    --background-end-rgb: 30, 41, 59;
+  }
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      135deg,
+      rgb(var(--background-start-rgb)) 0%,
+      rgb(var(--background-end-rgb)) 100%
+    );
+  min-height: 100vh;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(20, 184, 166, 0.3);
+}
+
+/* ============================================
+   Microanimations
+   ============================================ */
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In Down Animation */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scale In Animation */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Slide In Left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide In Right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Pulse Glow Animation */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(20, 184, 166, 0);
+  }
+}
+
+/* Float Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Shimmer Animation for Loading */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* ============================================
+   Animation Utility Classes
+   ============================================ */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.5s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.5s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.animate-bounce-subtle {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* Staggered animation delays */
+.animate-delay-100 { animation-delay: 100ms; }
+.animate-delay-200 { animation-delay: 200ms; }
+.animate-delay-300 { animation-delay: 300ms; }
+.animate-delay-400 { animation-delay: 400ms; }
+.animate-delay-500 { animation-delay: 500ms; }
+
+/* ============================================
+   Custom Component Classes
+   ============================================ */
+@layer components {
+  /* Primary Button with hover animation */
+  .btn-primary {
+    @apply bg-teal-500 hover:bg-teal-600 active:bg-teal-700 
+           text-white font-semibold py-2.5 px-5 rounded-xl 
+           transition-all duration-300 ease-out
+           shadow-md hover:shadow-lg hover:shadow-teal-500/25
+           hover:-translate-y-0.5 active:translate-y-0
+           focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2;
+  }
+  
+  /* Secondary Button */
+  .btn-secondary {
+    @apply bg-slate-200 hover:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-600
+           text-slate-700 dark:text-slate-200 font-semibold py-2.5 px-5 rounded-xl 
+           transition-all duration-300 ease-out
+           hover:-translate-y-0.5 active:translate-y-0;
+  }
+  
+  /* Outline Button */
+  .btn-outline {
+    @apply border-2 border-teal-500 text-teal-600 dark:text-teal-400
+           hover:bg-teal-500 hover:text-white 
+           font-semibold py-2 px-5 rounded-xl 
+           transition-all duration-300 ease-out
+           hover:-translate-y-0.5 active:translate-y-0;
+  }
+  
+  /* Ghost Button */
+  .btn-ghost {
+    @apply text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800
+           font-medium py-2 px-4 rounded-xl
+           transition-all duration-200;
+  }
+  
+  /* Card with hover effect */
+  .card {
+    @apply bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-6
+           transition-all duration-300 ease-out
+           border border-slate-100 dark:border-slate-700;
+  }
+  
+  .card-hover {
+    @apply card hover:shadow-xl hover:-translate-y-1 
+           hover:border-teal-200 dark:hover:border-teal-800
+           cursor-pointer;
+  }
+  
+  /* Input field with focus animation */
+  .input-field {
+    @apply w-full px-4 py-3 
+           bg-white dark:bg-slate-800
+           border-2 border-slate-200 dark:border-slate-600 
+           rounded-xl
+           text-slate-800 dark:text-white
+           placeholder-slate-400
+           transition-all duration-200
+           focus:outline-none focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10;
+  }
+  
+  /* Badge styles */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold
+           transition-all duration-200;
+  }
+  
+  .badge-success {
+    @apply badge bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300;
+  }
+  
+  .badge-warning {
+    @apply badge bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300;
+  }
+  
+  .badge-info {
+    @apply badge bg-sky-100 text-sky-700 dark:bg-sky-900/50 dark:text-sky-300;
+  }
+  
+  .badge-danger {
+    @apply badge bg-rose-100 text-rose-700 dark:bg-rose-900/50 dark:text-rose-300;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-md 
+           border border-white/20 dark:border-slate-700/50;
+  }
+  
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-teal-500 to-emerald-500 bg-clip-text text-transparent;
+  }
+}
+
+/* ============================================
+   Leaflet Custom Styles
+   ============================================ */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  z-index: 1;
+}
+
+.custom-marker,
+.participant-marker,
+.convoy-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Marker Animation */
+@keyframes marker-pulse {
+  0%, 100% { 
+    transform: scale(1); 
+    opacity: 1;
+  }
+  50% { 
+    transform: scale(1.1); 
+    opacity: 0.9;
+  }
+}
+
+.convoy-marker > div {
+  animation: marker-pulse 2s ease-in-out infinite;
+}
+
+/* Leaflet Popup Styles */
+.leaflet-popup-content-wrapper {
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  border: none;
+  overflow: hidden;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  padding: 0;
+}
+
+.leaflet-popup-tip {
+  box-shadow: none;
+}
+
+/* Responsive Map */
+@media (max-width: 768px) {
+  .leaflet-control-zoom {
+    margin-top: 10px !important;
+    margin-right: 10px !important;
+  }
+}
+
+/* ============================================
+   Scrollbar Styles
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* ============================================
+   Hero Section Gradient
+   ============================================ */
+.hero-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(20, 184, 166, 0.1) 0%,
+    rgba(16, 185, 129, 0.05) 50%,
+    transparent 100%
+  );
+}
+
+.hero-gradient-dark {
+  background: linear-gradient(
+    135deg,
+    rgba(20, 184, 166, 0.15) 0%,
+    rgba(16, 185, 129, 0.1) 50%,
+    transparent 100%
+  );
+}
+
+
